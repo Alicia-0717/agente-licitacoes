@@ -4,7 +4,7 @@ import requests
 
 def processar_edital(link_edital, prefeitura, numero_edital):
     try:
-        response = requests.get(link_edital)
+        response = requests.get(link_edital, timeout=15)
         if response.status_code == 200:
             # Simulação de processamento do edital
             print(f"✅ Edital {numero_edital} da {prefeitura} baixado com sucesso!")
